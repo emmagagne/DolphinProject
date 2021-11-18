@@ -3,12 +3,17 @@
 # EKG
 #--------------------------------------------------------------------------
 
-# Preliminiars
+# install iNEXT package from CRAN
+install.packages("iNEXT")
+
+# import packages
+library(iNEXT)
 library(ggplot2)
 library(ggthemes)
-library(DivE)
+library(readr)
 
-# "DivE requires data where each individual has been sampled randomly, 
-# independently and with an equal probability of detection, and where the 
-# underlying distribution of individuals is spatially homogeneous."
+# import data set
+DolphinRepertoireData <- read_csv("DolphinRepertoireData.csv")
+View(DolphinRepertoireData)
 
+str(DolphinRepertoireData.csv)
