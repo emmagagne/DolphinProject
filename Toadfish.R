@@ -147,7 +147,7 @@ dt <- dfplot + theme_clean(base_size=12,
   theme(legend.position = "none") +
   scale_fill_brewer(palette = "Blues") +
   geom_signif(comparisons = list(c("2018 (Pre-Covid)", "2020 (Covid)")), 
-              map_signif_level=TRUE, y_position=2.6) + 
+              map_signif_level=TRUE, y_position=2.7) + 
   geom_signif(comparisons = list(c("2019 (Pre-Covid)", "2020 (Covid)")), 
               map_signif_level=TRUE, y_position=2.49)
 dt
@@ -163,11 +163,11 @@ hf <- hfplot + theme_clean(base_size=12,
   theme(legend.position = "none") +
   scale_fill_brewer(palette = "Blues") +
   geom_signif(comparisons = list(c("2018 (Pre-Covid)", "2020 (Covid)")), 
-              map_signif_level=TRUE, y_position=930) + 
+              map_signif_level=TRUE, y_position=945) + 
   geom_signif(comparisons = list(c("2019 (Pre-Covid)", "2020 (Covid)")), 
-              map_signif_level=TRUE, y_position=890) +
+              map_signif_level=TRUE, y_position=895) +
   geom_signif(comparisons = list(c("2018 (Pre-Covid)", "2019 (Pre-Covid)")),
-              map_signif_level=TRUE, y_position=890)
+              map_signif_level=TRUE, y_position=895)
 hf
 
 # low frequency
