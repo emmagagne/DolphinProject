@@ -37,6 +37,11 @@ peakFrequency <- read.csv("Toadfish Data New - Peak Frequency.csv",
 peakFrequency
 levels(peakFrequency$Year)
 
+RMSAmp <- read.csv("Toadfish Data New - RMS Amp.csv",
+                          stringsAsFactors=T)
+RMSAmp
+levels(RMSAmp$Year)
+
 
 # stats time ----------------------------------------------------------------
 # Performing Kruskal-Wallis test
@@ -76,6 +81,14 @@ print(result)
 # Kruskal-Wallis rank sum test
 # data:  peakFrequency$`Peak Frequency` by peakFrequency$Year
 # Kruskal-Wallis chi-squared = 38.829, df = 2, p-value =  3.701e-09
+
+# RMS amplitude
+result = kruskal.test(RMSAmp$RMS.Amp..U. ~ RMSAmp$Year, 
+                      data = RMSAmp)
+print(result)
+# Kruskal-Wallis rank sum test
+# data:  RMSAmp$RMS.Amp..U. by RMSAmp$Year
+# Kruskal-Wallis chi-squared = 1203, df = 2, p-value <2.2e-16
 
 # pairwise tests -------------------------------------------------------------
 # Dunn's Test
@@ -133,6 +146,17 @@ dunn.test(x=peakFrequency$Peak.Frequency, g=peakFrequency$Year,
 # 2020 (Co |  -4.188709   2.137889
 #         |    0.0000*     0.0488
 
+# RMS Amplitude
+dunn.test(x=RMSAmp$RMS.Amp..U., g=RMSAmp$Year,
+          method="bonferroni", label=TRUE, table=TRUE)
+# Col Mean-|
+# Row Mean |   2018 (Pr   2019 (Pr
+# ---------+----------------------
+# 2019 (Pr |   16.11119
+#          |    0.0000*
+#          |
+# 2020 (Co |   34.41782   12.18834
+#          |    0.0000*    0.0000*
 
 # Graphics ------------------------------------------------------------------
 
@@ -204,6 +228,28 @@ pf <- pfplot + theme_clean(base_size=12,
               map_signif_level=TRUE, y_position=500)
 pf
 
+# RMS Amplitude
+# upload data set with just 2019 and 2020 data, 2018 is far out of range
+
+RMSAmpsmall <- read.csv("RMSAmp_20192020.csv",
+                        stringsAsFactors=T)
+RMSAmpsmall
+levels(RMSAmpsmall$ï..Year)
+
+ampplot <- ggplot(RMSAmpsmall, aes(x=RMSAmpsmall$ï..Year, 
+                                   y=RMSAmpsmall$RMS.Amp..U.,
+                                    fill=RMSAmpsmall$ï..Year)) +
+  ylab("RMS Amplitude (U)") + 
+  xlab("Year") +
+  geom_boxplot() + ggtitle("RMS Amplitude (U)")
+amp <- ampplot + theme_clean(base_size=12,
+                           base_family="serif") +
+  theme(legend.position = "none") +
+  scale_fill_brewer(palette = "Blues") +
+  geom_signif(comparisons = list(c("2019 (Pre-Covid)", "2020 (Covid)")), 
+              map_signif_level=TRUE, y_position=400)
+amp
+
 # combine plots ----------------------------------------------------------------
 (dt | hf)/(lf | pf)
 
@@ -250,3 +296,6 @@ snr <- snrplot + theme_clean(base_size=12,
   geom_signif(comparisons = list(c("2019 (Pre-Covid)", "2020 (Covid)")),
               map_signif_level=TRUE, y_position=17)
 snr
+
+# combine snr and amplitude
+(amp | snr)
