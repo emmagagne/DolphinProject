@@ -1,0 +1,35 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.12.8)  13 DEC 2021 11:15
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**C:/Users/egagn/OneDrive/Documents/R/DolphinProject/JASA.tex
+(c:/Users/egagn/OneDrive/Documents/R/DolphinProject/JASA.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2021-11-22> (./JASA.cls
+Document Class: JASA 2020/12/16 Version 1.2, document class
+Class JASA Info: 
+ Written by Amy Hendrickson, amyh@texnology.com, http://www.texnology.com 
+ 
+  on input line 92.
+
+
+ Please update your system to include revtex4-2.cls
+
+ We recommend downloading a current version of TeX Live, MacTeX, or MikTeX to have all the current files
+ ) )
+(\end occurred when \ifx on line 15 was incomplete) 
+Here is how much of TeX's memory you used:
+ 39 strings out of 480313
+ 935 string characters out of 5895528
+ 290939 words of memory out of 5000000
+ 18008 multiletter control sequences out of 15000+600000
+ 403430 words of font info for 27 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 29i,1n,37p,163b,18s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+No pages of output.
+PDF statistics:
+ 0 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

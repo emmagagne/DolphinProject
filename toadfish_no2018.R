@@ -90,7 +90,7 @@ timeplot <- ggplot(deltaTime, aes(x=Year, y=deltaTime$Delta.Time..s.,
                                     fill=deltaTime$Year)) +
   ylab("Delta Time (s)") + 
   xlab("Year") +
-  geom_boxplot() + ggtitle("Delta Time")
+  geom_boxplot() + ggtitle("(a) Delta Time")
 dtplot <- timeplot + theme_clean(base_size=12,
                            base_family="serif") +
   theme(legend.position = "none") +
@@ -104,7 +104,7 @@ highfreqplot <- ggplot(highFrequency, aes(x=Year, y=highFrequency$High.Frequency
                                   fill=highFrequency$Year)) +
   ylab("High Frequency (Hz)") + 
   xlab("Year") +
-  geom_boxplot() + ggtitle("High Frequency")
+  geom_boxplot() + ggtitle("(d) High Frequency")
 hfplot <- highfreqplot + theme_clean(base_size=12,
                                  base_family="serif") +
   theme(legend.position = "none") +
@@ -118,7 +118,7 @@ lowfreqplot <- ggplot(lowFrequency, aes(x=Year, y=lowFrequency$Low.Frequency,
                                           fill=lowFrequency$Year)) +
   ylab("Low Frequency (Hz)") + 
   xlab("Year") +
-  geom_boxplot() + ggtitle("Low Frequency")
+  geom_boxplot() + ggtitle("(c) Low Frequency")
 lfplot <- lowfreqplot + theme_clean(base_size=12,
                                      base_family="serif") +
   theme(legend.position = "none") +
@@ -132,7 +132,7 @@ rmsamp <- ggplot(RMSAmp, aes(x=Year, y=RMSAmp$RMS.Amp..U.,
                                         fill=RMSAmp$Year)) +
   ylab("RMS Amplitude (U)") + 
   xlab("Year") +
-  geom_boxplot() + ggtitle("RMS Amplitude")
+  geom_boxplot() + ggtitle("(b) RMS Amplitude")
 rmsplot <- rmsamp + theme_clean(base_size=12,
                                     base_family="serif") +
   theme(legend.position = "none") +
@@ -144,10 +144,10 @@ rmsplot
 # SNR
 snrplot <- ggplot(snr, aes(x=Year, y=snr$SNR..dB.,
                              fill=snr$Year)) +
-  ylab("Signal to Noise Ratio (dB)") + 
+  ylab("Signal-to Noise-Ratio (dB)") + 
   xlab("Year") +
-  geom_boxplot() + ggtitle("Signal to Noise Ratio")
-snrplot <- snrplot + theme_clean(base_size=12,
+  geom_boxplot() + ggtitle("Signal-to-Noise Ratio")
+snrplot <- snrplot + theme_clean(base_size=14,
                                 base_family="serif") +
   theme(legend.position = "none") +
   scale_fill_grey(start = 0.8, end = 0.5) +
